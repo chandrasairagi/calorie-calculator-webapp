@@ -26,7 +26,7 @@ function addItem() {
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML=`<input type="text" style="width:100%;" >`;
-    cell2.innerHTML=`<input type="number" class="calorie" style="width:100%;" >`;
+    cell2.innerHTML=`<input type="number" step="any" class="calorie" style="width:100%;" >`;
 }
 
 function calculateFood() {
