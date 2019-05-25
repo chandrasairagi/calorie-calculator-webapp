@@ -1,0 +1,14 @@
+body,h1,h2,h3,h4,h5,h6,p {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.mySlides {display: none}
+table{ width : 100%;
+    border : 1px solid black;
+    
+}
+th,td{
+    width : 30%;
+    height: 30;
+}
+input[type="number"]{
+    margin: 5px left right;
+    width:60%;
+}
