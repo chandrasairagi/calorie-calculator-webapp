@@ -12,11 +12,11 @@ import styles.css;
    
     if(gm ==true){
         res=864-9.72*age + 14.2*w + 503*h;
-       document.getElementById("app").innerHTML="result = "+res;
+       document.getElementById("app").innerHTML="The maximum amount of intake calories for you is "+res;
    }
    else{
        res=387-7.31*age + 10.9*w + 660.7*h;
-     document.getElementById("app").innerHTML='result = '+ res;
+     document.getElementById("app").innerHTML='The maximum amount of intake calories for you is '+ res;
    }
 }
 
@@ -39,14 +39,14 @@ function calculateFood() {
      if(total<=res){
          alert("it is safe to have more food");
      }else{
-         alert("WARNING!! : YOU HAVE EXCEEDED ")
+         alert("WARNING!! : YOU HAVE EXCEEDED YOUR INTAKE LIMIT")
      }
      
      if(urLimit){if(total<=urLimit){
-         document.getElementById("app3").innerHTML="total is less than ur limit";
+         document.getElementById("app3").innerHTML="The total amount of calories you had is less than limit set by you";
      }else
     {
-              document.getElementById("app3").innerHTML="WARNING!! : YOU HAVE EXCEEDED ";
+              document.getElementById("app3").innerHTML="WARNING!! : YOU HAVE EXCEEDED LIMIT SET BY YOU";
    
     }
     } 
