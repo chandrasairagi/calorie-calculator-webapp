@@ -54,7 +54,7 @@ function addItem() {
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML=`<input type="text" style="width:100%;" >`;
-    cell2.innerHTML=`<input type="number" class="calorie" style="width:100%;" >`;
+    cell2.innerHTML=`<input type="number" step="any"  class="calorie" style="width:100%;" >`;
 }
 
 function calculateFood() {
@@ -85,10 +85,10 @@ function calculateFood() {
 <body >
 	
 	<form>
-	<p>Set your Calorie limit:</p>	<input type='number' id="urcal" class="w3-input w3-border" name="givenCR" >
+	<p>Set your Calorie limit:</p>	<input type='number' step="any" id="urcal" class="w3-input w3-border" name="givenCR" >
 	<p>Age (in years):</p>	<input type="number"  id="age" class="w3-input w3-border"required >
-	<p>Height (in meters):</p> 	<input type="number"  id="height" class="w3-input w3-border" required>
-	<p>weight (in kgs):</p>	<input type="number"  id="weight" class="w3-input w3-border" required>
+	<p>Height (in meters):</p> 	<input type="number" step="any"  id="height" class="w3-input w3-border" required>
+	<p>weight (in kgs):</p>	<input type="number" step="any"   id="weight" class="w3-input w3-border" required>
     <p>Gender:</p>
 
 	
@@ -117,7 +117,7 @@ function calculateFood() {
 	    </tr>
 	    <tr>
 	        <td ><input type="text" style="width:100%;" ></td>
-	        <td ><input type="number" class="calorie" style="width:100%;" ></td>
+	        <td ><input type="number" step="any"  class="calorie" style="width:100%;" ></td>
 	        <td ><button style="width:100%;" onclick="calculateFood()" class="w3-button w3-green w3-third" >save all</button></td>
 	    </tr>
 	</table>
