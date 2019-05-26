@@ -59,6 +59,24 @@ function addItem() {
 }
 
 function calculateFood() {
+	var gm=document.getElementById("male").checked;
+
+   var age = document.getElementById("age").value;
+  
+
+   var h = document.getElementById("height").value;
+   var w = document.getElementById("weight").value;
+ var urLimit=document.getElementById("urcal").value;    
+
+if(gm == true){
+        res=864-9.72*age + 14.2*w + 503*h;
+       document.getElementById("app").innerHTML="The maximum amount of intake calories for you is "+res;
+   }
+   else{
+       res=387-7.31*age + 10.9*w + 660.7*h;
+     document.getElementById("app").innerHTML="The maximum amount of intake calories for you is "+ res;
+   }
+
     var x = document.querySelectorAll(".calorie");
     var total =0;
     for(var i=0; i<x.length ;i++){
@@ -85,6 +103,10 @@ function calculateFood() {
 </head>
 
 <body >
+	
+    <h1>Calorie calculator Web Application</h1>
+	<p>This application compares calories you consume to calories your body require. You can set your own calorie limit also.</p>
+
 	
 	<form>
 	<p>Set your Calorie limit:</p>	<input type='number' step="any" id="urcal" class="w3-input w3-border" name="givenCR" >
