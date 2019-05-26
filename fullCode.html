@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Calorie calculator</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body,h1,h2,h3,h4,h5,h6,p {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.mySlides {display: none}
+table{
+width:100%;
+    border : 1px solid black;
+    
+}
+th,td{
+    width : 30%;
+    height: 30;
+}
+input[type="number"]{
+    margin: 5px left right;
+    width:60%;
+}
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script >
+
+  
+  var res; 
+  var urLimit;
+  function myCal() {
+   var gm=document.getElementById("male").checked;
+   var age = document.getElementById("age").value;
+   var h = document.getElementById("height").value;
+   var w = document.getElementById("weight").value;
+   urLimit=document.getElementById("urcal").value;
+  
+   
+    if(gm ==true){
+        res=864-9.72*age + 14.2*w + 503*h;
+       document.getElementById("app").innerHTML="result = "+res;
+   }
+   else{
+       res=387-7.31*age + 10.9*w + 660.7*h;
+     document.getElementById("app").innerHTML='result = '+ res;
+   }
+}
+
+function addItem() {
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML=`<input type="text" style="width:100%;" >`;
+    cell2.innerHTML=`<input type="number" class="calorie" style="width:100%;" >`;
+}
+
+function calculateFood() {
+    var x = document.querySelectorAll(".calorie");
+    var total =0;
+    for(var i=0; i<x.length ;i++){
+        total+=Number(x[i].value);
+    }
+     document.getElementById("app2").innerHTML="total =" + total;
+     if(total<=res){
+         alert("it is safe to have more food");
+     }else{
+         alert("WARNING!! : YOU HAVE EXCEEDED ")
+     }
+     
+     if(urLimit){if(total<=urLimit){
+         document.getElementById("app3").innerHTML="total is less than ur limit";
+     }else
+    {
+              document.getElementById("app3").innerHTML="WARNING!! : YOU HAVE EXCEEDED ";
+   
+    }
+    } 
+}
+	</script>
+</head>
+
+<body >
+	
+	<form>
+	<p>Set your Calorie limit:</p>	<input type='number' id="urcal" class="w3-input w3-border" name="givenCR" >
+	<p>Age (in years):</p>	<input type="number"  id="age" class="w3-input w3-border"required >
+	<p>Height (in meters):</p> 	<input type="number"  id="height" class="w3-input w3-border" required>
+	<p>weight (in kgs):</p>	<input type="number"  id="weight" class="w3-input w3-border" required>
+    <p>Gender:</p>
+
+	
+	<input type="radio" name="gender" id="male"  checked>Male<br>
+	
+	<input type="radio" name="gender" id="female"  >Female
+	
+
+
+	<p>Click below button to calculate calorie limit</p>
+	<button onclick="myCal()" class="w3-button w3-green w3-third">Calculate</button>
+	</form>
+	<br>
+	<br>
+	
+	<p id="app"></p>
+	<table id="myTable">
+	    <tr>
+	        <th>
+	            Name of food
+	        </th>
+	        <th>
+	            Calories
+	        </th>
+	        <td><button style="width:100%;"  onclick="addItem()" class="w3-button w3-green w3-third">Add item</button></td>
+	    </tr>
+	    <tr>
+	        <td ><input type="text" style="width:100%;" ></td>
+	        <td ><input type="number" class="calorie" style="width:100%;" ></td>
+	        <td ><button style="width:100%;" onclick="calculateFood()" class="w3-button w3-green w3-third" >save all</button></td>
+	    </tr>
+	</table>
+	
+	<p id="app2"></p>
+	<P id="app3"></p>
+	
+</body>
+
+</html>
